@@ -31,5 +31,12 @@ class DynamicSelectable
     if id && id != ''
       @urlTemplate.replace(/:.+_id/, id)
 
+
+createDynamicSelectable = -> $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable()
+
+
 $ ->
-  $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable()
+  if Turbolinks
+    $(document).on 'turbolinks:load', createDynamicSelectable
+  else
+    $(createDynamicSelectable)
