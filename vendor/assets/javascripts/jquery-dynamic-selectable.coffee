@@ -33,7 +33,6 @@ class DynamicSelectable
 
 
 createDynamicSelectable = -> $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable()
-                             # $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable()
 
 
 $ ->
